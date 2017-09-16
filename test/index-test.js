@@ -1,27 +1,27 @@
 
 describe('shout(string)', function() {
-  function shout(string) {
-    return string.toUpperCase()
-  }
   it('receives one argument and returns it in all caps', function() {
     expect(shout('hello')).toEqual('HELLO')
   })
 })
 
+function shout(string) {
+  return string.toUpperCase()
+}
+
 describe('whisper(string)', function() {
-  function whisper(string){
-    return string.toLowerCase()
-  }
+
   it('receives one argument and returns it in all lowercase', function() {
     expect(whisper('HELLO')).toEqual('hello')
   })
+  function whisper(string){
+    return string.toLowerCase()
+  }
 })
 
 describe('logShout(string)', function() {
   function logShout(string){
-    console.log(string).toUpperCase
-      //function s(console, 'log')
-        //return console.log().toUpperCase
+    console.log(string.toUpperCase())
   }
   it('calls console.log() its one argument in all caps', function() {
     const spy = expect.spyOn(console, 'log').andCallThrough()
@@ -35,8 +35,8 @@ describe('logShout(string)', function() {
 })
 
 describe('logWhisper(string)', function() {
-  function logWhisper(string){
-    console.log(logWhisper(string).toLowerCase)
+  function logWhisper(string) {
+    console.log(`${string}`.toLowerCase)
   }
 
   it('calls console.log() its one argument in all lowercase', function() {
@@ -51,13 +51,13 @@ describe('logWhisper(string)', function() {
 })
 
 describe('sayHiToGrandma(string)', function() {
-  function sayHiToGrandma(string){
-    if 'string' === string.toUpperCase {
-      return "YES INDEED!"
-    } elseif (string === "I love you, Grandma.") {
-      return "I love you, too."
-    }
-  }
+  function sayHiToGrandma(string) {
+    if (string === string.toLowerCase()) {
+        return "I can\'t hear you!"
+      } elseif (string === string.toUpperCase())
+        return "YES INDEED!"
+      } elseif (string === "I love you, Grandma.")
+        return "I love you, too."
   it('returns "I can\'t hear you!" if `string` is lowercase', function() {
     expect(sayHiToGrandma('hello')).toEqual("I can't hear you!")
   })
